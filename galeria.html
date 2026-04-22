@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria — ZT Flores</title>
+  <meta name="description" content="Explore nossa galeria de arranjos florais exclusivos. Arte botânica premium com curadoria da ZT Flores.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand": "#ff6900",
+            "brand-dark": "#e05e00",
+            "brand-light": "#fff4eb",
+            "plum": "#3d1a2e",
+            "cream": "#faf8f5",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="section-padding fade-in" style="padding-bottom:0;">
+      <div class="section-inner">
+        <div class="flex flex-col gap-6 mb-10">
+          <div class="flex flex-col gap-2">
+            <span class="section-label" data-i18n="gallery.label">Curadoria Exclusiva</span>
+            <h1 class="font-serif text-5xl md:text-6xl font-black leading-tight tracking-tight italic" style="color:var(--plum);" data-i18n="gallery.title">Nossa Galeria</h1>
+            <p class="text-lg max-w-2xl leading-relaxed" style="color:var(--text-muted);" data-i18n="gallery.desc">
+              Explore nossa coleção de arte botânica. Cada arranjo é uma composição única pensada para traduzir sentimentos em cores e aromas.
+            </p>
+          </div>
+
+          <!-- Filter Bar -->
+          <div class="gallery-filter-bar">
+            <button class="gallery-filter-btn active" data-i18n="gallery.filter.all">Tudo</button>
+            <button class="gallery-filter-btn" data-i18n="gallery.filter.roses">Rosas</button>
+            <button class="gallery-filter-btn" data-i18n="gallery.filter.bridal">Buquês de Noiva</button>
+            <button class="gallery-filter-btn" data-i18n="gallery.filter.corporate">Eventos Corporativos</button>
+            <button class="gallery-filter-btn" data-i18n="gallery.filter.dried">Arranjos Secos</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section style="padding:0 clamp(16px,4vw,64px) 40px;">
+      <div class="section-inner">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+          <!-- Large Feature Card -->
+          <div class="group relative md:col-span-2 lg:col-span-2 overflow-hidden rounded-[20px] aspect-[16/9] fade-in" style="background:var(--plum);">
+            <img alt="Jardim de Inverno — arranjo com rosas holandesas" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgYVOS3n9ieFcA0ExYIkF-KIGDYickFXryRnKYSDTf3UNkEdTtQNVlzbI_GJkX-SkkJZVvDftbbPMkS9ijvugc3OSARedPBHucW6GjByFX2UxF0_h3yIGW3lwMKjNZMF7MVZJtXobpZ6COaS1AI-ns9U7b-qSXQnkn6x2hwEkVU0qtFIPNzs9fR6rNfn3SJY1zForDESyL1C3812Kh1azU94hsZbfdhZlN6Kz-GLLIvY-M8JsCME-7KtrKTJNmVD5p31PedAKGd2yi">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full w-fit mb-3" style="background:var(--brand);color:#fff;" data-i18n="gallery.featured.badge">Destaque do Mês</span>
+              <h3 class="text-white text-3xl font-bold mb-2">Jardim de Inverno</h3>
+              <p class="text-white/80 text-sm max-w-md mb-4">Um arranjo imponente com mix de rosas holandesas e folhagens de eucalipto premium.</p>
+              <a class="font-bold text-sm flex items-center gap-2 hover:underline" style="color:var(--brand);" href="https://wa.me/5519996638193?text=Ol%C3%A1!%20Gostei%20do%20arranjo%20Jardim%20de%20Inverno.%20Gostaria%20de%20saber%20mais." target="_blank">
+                <span data-i18n="gallery.featured.cta">Solicitar Orçamento</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="group relative overflow-hidden rounded-[20px] aspect-[4/5] fade-in">
+            <img alt="Pureza Nupcial — buquê de noiva" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6LbP8gIA6VfuRwpNoYlPRHihfzR8_GVBzdOlzw_dJO0RQZ4sSK2pVQUWs4CgIv-9ixkJUNyT47iDxGjMJTwghjB2OwXzRnSXzIGkrWZOcG_od9hFLu5b-hxkqLpwARhT-3QvkMOkIB_jjwQCqzDb4QCAmUHf3KYmQMgVj5ULxTrvD4218qkLSnOIT4fJjb1fHMtILk3ha_Qt5KnPoPAToivzPBWoqVymX4zcK6z5hAgi1bm2EX1teFUW5ruGqft9c7O9O76eYMFjp">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <h3 class="text-white text-xl font-bold">Pureza Nupcial</h3>
+              <p class="text-white/85 text-xs mt-1">Coleção Noivas 2024</p>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white">
+              <span class="material-symbols-outlined">favorite</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group relative overflow-hidden rounded-[20px] aspect-[4/5] fade-in">
+            <img alt="Tulipas de Amsterdã — arranjo minimalista" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjWUTszVK7hl0u_JQpDw3e-mWJM2jXC-44qzRxqbjAWj29xJc2jboKSQ501gQzhj_rrUqCVzzPGiCfRlF6ImLOKCBhyuCdylIxO2qPHrBB4tpr7Gk8_Rt331aQWX41uFe_v7T97a5ya4-spbKnOq8-4nKSeDXxdY8XVajguIPuaRv2OGd8wvMtYmWbZZKWnJlFncQx9sH7y1dU2ia8x1PDp2nwr5V9xJQ1ZZ1xTg0hDhvmD95QRVqy4KXtv4fWsSi8J6HfyzJPyZW6">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <h3 class="text-white text-xl font-bold">Tulipas de Amsterdã</h3>
+              <p class="text-white/85 text-xs mt-1">Arranjos de Mesa</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group relative overflow-hidden rounded-[20px] aspect-[4/5] fade-in">
+            <img alt="Vibrância Tropical — edição limitada" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuALGPt8Cuj4unPL_jRy7MtGDYz27w-cHYV6fHDJEfK_5lOYxLkljLETR69rd0jKLjH1KPiThp9MjnJI9dqor0lpLFkA4C9dL8VOcpOloqUMUlGx8dYgSmvKJ7T3TX79O0-XDyyr4YZE05T4wpxnOkJqtz4hy6uag3XnVeZ_bFXS2lkJdRzrmJlnTX4lESG2WVjdRoqmrKX8LEYZcf9EMAlpTEqDvizA49evBpc92nLWxCSaSSGta0zruUhfAgbHyu7R4zIiIYyifoML">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <h3 class="text-white text-xl font-bold">Vibrância Tropical</h3>
+              <p class="text-white/85 text-xs mt-1">Edição Limitada</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="group relative overflow-hidden rounded-[20px] aspect-[4/5] fade-in">
+            <img alt="Sussurro de Outono — coleção sazonal" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc1-RJW_yZX_cDmOkGYpNpiAxTCkR6LI7g1UWLLvPNO_zDlLS7KeGnWHDvTP2nQx3BTosyYrm3AosCGz5xfbwN9hQ9fGieSfdZgFoYpgtzf3bMpS002_iAieGUeAfarXHL18HmrPHN_-LCBKAI6VXcsn0ffhaMLaJr7EUAWVKQ8vmOXobIJfih8NaLzUSpp4r_HbGMK0rHOdrmL8VrBXQ6-b5t7gWJ5pnw2BOuOmiOUNv6tmJz91wLzgfYRcV8pE-cn_OsDx3I_Us3">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <h3 class="text-white text-xl font-bold">Sussurro de Outono</h3>
+              <p class="text-white/85 text-xs mt-1">Coleção Sazonal</p>
+            </div>
+          </div>
+
+          <!-- Cloudinary Gallery Cards -->
+          <div class="group relative overflow-hidden rounded-[20px] aspect-[4/5] fade-in">
+            <img alt="Zinnia — flores de alta qualidade" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://res.cloudinary.com/dqcs4rqjx/image/upload/f_auto,q_auto,w_600/v1773753938/Zinnia_zuhdk3.png">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <h3 class="text-white text-xl font-bold">Zinnia</h3>
+              <p class="text-white/85 text-xs mt-1">Flores Premium</p>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-[20px] aspect-[4/5] fade-in">
+            <img alt="Gypsophila — Mosquitinho" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                 src="https://res.cloudinary.com/dqcs4rqjx/image/upload/f_auto,q_auto,w_600/v1773753938/Gypsophila_ou_Mosquitinho_ltfl3u.png">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <h3 class="text-white text-xl font-bold">Gypsophila</h3>
+              <p class="text-white/85 text-xs mt-1">Mosquitinho Premium</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding fade-in" style="padding-top:24px;">
+      <div class="section-inner">
+        <div class="relative overflow-hidden rounded-[24px] p-10 md:p-16 text-center" style="background:var(--brand-light);border:1px solid rgba(255,105,0,0.12);">
+          <div class="absolute -top-16 -right-16 opacity-[0.07]">
+            <span class="material-symbols-outlined" style="font-size:180px;color:var(--brand);">spa</span>
+          </div>
+          <div class="max-w-2xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-4xl font-black mb-4" style="color:var(--plum);" data-i18n="gallery.cta.title">Deseja algo personalizado?</h2>
+            <p class="text-lg mb-8" style="color:var(--text-muted);" data-i18n="gallery.cta.desc">
+              Nossos mestres floristas estão prontos para criar o arranjo perfeito para o seu momento. Compartilhe sua ideia conosco.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://wa.me/5519996638193?text=Ol%C3%A1!%20Vi%20a%20galeria%20e%20gostaria%20de%20um%20arranjo%20personalizado." 
+                 target="_blank" class="btn-primary" style="font-size:1rem;">
+                <span class="material-symbols-outlined">chat</span>
+                <span data-i18n="gallery.cta.btn_whatsapp">Conversar no WhatsApp</span>
+              </a>
+              <a href="lista_de_produtos_marketplace.html" class="btn-outline" style="font-size:1rem;">
+                <span data-i18n="gallery.cta.btn_catalog">Ver Catálogo Completo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="i18n.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>

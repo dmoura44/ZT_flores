@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — ZT Flores</title>
+  <meta name="description" content="Explore nosso catálogo de flores premium: rosas importadas, orquídeas, tulipas, girassóis e arranjos exclusivos. Solicite via WhatsApp.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand": "#ff6900",
+            "brand-dark": "#e05e00",
+            "brand-light": "#fff4eb",
+            "plum": "#3d1a2e",
+            "cream": "#faf8f5",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main>
+
+    <!-- Breadcrumbs & Title -->
+    <section style="max-width:1200px;margin:0 auto;padding:24px clamp(16px,4vw,64px) 0;">
+      <nav class="flex items-center gap-2 text-sm mb-6" style="color:var(--text-muted);">
+        <a class="hover:text-[var(--brand)] transition-colors" href="home.html" data-i18n="catalog.breadcrumb.home">Home</a>
+        <span class="material-symbols-outlined text-xs">chevron_right</span>
+        <span class="font-semibold" style="color:var(--text);" data-i18n="catalog.breadcrumb.current">Catálogo</span>
+      </nav>
+    </section>
+
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,64px) 48px;">
+      <div class="flex flex-col lg:flex-row gap-8">
+
+        <!-- Mobile Filter Toggle -->
+        <button class="catalog-sidebar-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.toggle-icon').textContent = this.nextElementSibling.classList.contains('open') ? 'expand_less' : 'tune';" data-i18n-aria="catalog.filters.title">
+          <span class="material-symbols-outlined toggle-icon">tune</span>
+          <span data-i18n="catalog.filters.title">Filtros</span>
+        </button>
+
+        <!-- Sidebar Filters -->
+        <aside class="catalog-sidebar w-full lg:w-72 flex-shrink-0 fade-in">
+          <div class="bg-white rounded-[16px] p-6 sticky top-24" style="border:1px solid var(--border);box-shadow:var(--shadow-sm);">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold" style="color:var(--text);" data-i18n="catalog.filters.title">Filtros</h3>
+              <button class="text-xs font-bold hover:underline" style="color:var(--brand);" data-i18n="catalog.filters.clear">Limpar tudo</button>
+            </div>
+
+            <!-- Categories -->
+            <div class="mb-8">
+              <h4 class="text-xs font-bold uppercase tracking-[0.15em] mb-4" style="color:var(--text);" data-i18n="catalog.filters.categories">Categorias</h4>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input type="checkbox" checked class="rounded border-gray-300 text-[var(--brand)] focus:ring-[var(--brand)]">
+                  <span class="text-sm group-hover:text-[var(--brand)] transition-colors flex items-center gap-2" style="color:var(--text-muted);">
+                    <span class="material-symbols-outlined text-lg opacity-60">filter_vintage</span> Rosas
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input type="checkbox" class="rounded border-gray-300 text-[var(--brand)] focus:ring-[var(--brand)]">
+                  <span class="text-sm group-hover:text-[var(--brand)] transition-colors flex items-center gap-2" style="color:var(--text-muted);">
+                    <span class="material-symbols-outlined text-lg opacity-60">filter_vintage</span> Girassóis
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input type="checkbox" class="rounded border-gray-300 text-[var(--brand)] focus:ring-[var(--brand)]">
+                  <span class="text-sm group-hover:text-[var(--brand)] transition-colors flex items-center gap-2" style="color:var(--text-muted);">
+                    <span class="material-symbols-outlined text-lg opacity-60">filter_vintage</span> Orquídeas
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input type="checkbox" class="rounded border-gray-300 text-[var(--brand)] focus:ring-[var(--brand)]">
+                  <span class="text-sm group-hover:text-[var(--brand)] transition-colors flex items-center gap-2" style="color:var(--text-muted);">
+                    <span class="material-symbols-outlined text-lg opacity-60">filter_vintage</span> Lírios
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input type="checkbox" class="rounded border-gray-300 text-[var(--brand)] focus:ring-[var(--brand)]">
+                  <span class="text-sm group-hover:text-[var(--brand)] transition-colors flex items-center gap-2" style="color:var(--text-muted);">
+                    <span class="material-symbols-outlined text-lg opacity-60">filter_vintage</span> Tulipas
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Occasion -->
+            <div class="mb-6">
+              <h4 class="text-xs font-bold uppercase tracking-[0.15em] mb-4" style="color:var(--text);" data-i18n="catalog.filters.occasion">Ocasião</h4>
+              <div class="flex flex-wrap gap-2">
+                <button class="gallery-filter-btn active" style="font-size:0.7rem;padding:6px 14px;" data-i18n="catalog.occasion.birthday">Aniversário</button>
+                <button class="gallery-filter-btn" style="font-size:0.7rem;padding:6px 14px;" data-i18n="catalog.occasion.wedding">Casamento</button>
+                <button class="gallery-filter-btn" style="font-size:0.7rem;padding:6px 14px;" data-i18n="catalog.occasion.romantic">Romântico</button>
+                <button class="gallery-filter-btn" style="font-size:0.7rem;padding:6px 14px;" data-i18n="catalog.occasion.corporate">Corporativo</button>
+              </div>
+            </div>
+
+            <button class="btn-primary w-full" style="font-size:0.85rem;" data-i18n="catalog.filters.apply">Aplicar Filtros</button>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="flex-1">
+          <!-- Toolbar -->
+          <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4 fade-in">
+            <h1 class="text-2xl font-extrabold" style="color:var(--text);">
+              <span data-i18n="catalog.title">Nossa Coleção</span> <span class="font-normal text-lg ml-2" style="color:var(--text-light);" data-i18n="catalog.count">(124 arranjos)</span>
+            </h1>
+            <div class="flex items-center gap-3">
+              <label class="text-sm font-bold whitespace-nowrap" style="color:var(--text-muted);" data-i18n="catalog.sort">Ordenar por:</label>
+              <select class="bg-white rounded-lg text-sm font-semibold px-4 py-2 focus:ring-[var(--brand)] focus:border-[var(--brand)]" style="border-color:var(--border);">
+                <option data-i18n="catalog.sort.popular">Mais Populares</option>
+                <option data-i18n="catalog.sort.new">Novidades</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+
+            <!-- Card 1 -->
+            <div class="zt-card fade-in">
+              <div class="card-image">
+                <img alt="Arranjo Majestoso de Rosas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGaVygQDBvC3QO-3CIL1nYIk9VJMeJYUuTO_a02ymf7WVlrQYaN-5we1ANn0GxM787EtUygdO0ibS30XvnIFZkk-3Z6tC-cRyuZHptcuzZTRwhahZlBS7RaSw7cn_Ujc1gz6TgqqcGlVvcOxkCBCff7NJJh0P8m7rCikwOW_RFmLNXB7IgcS7pAPLOOcTwamf_W00c2-F7g_sanqti2hBIXJHqkBKeeYbWWtqgh1Yl3waBg9Dbq1w7T52m3L2asSzGmyKJCLLIdzYO">
+                <span class="card-badge">Premium</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Arranjo Majestoso de Rosas</h3>
+                <p class="text-sm mb-4" style="color:var(--text-muted);">12 Rosas selecionadas com folhagens nobres</p>
+                <button class="btn-add-selection" onclick="ZT.addToCart('Arranjo Majestoso de Rosas', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGaVygQDBvC3QO-3CIL1nYIk9VJMeJYUuTO_a02ymf7WVlrQYaN-5we1ANn0GxM787EtUygdO0ibS30XvnIFZkk-3Z6tC-cRyuZHptcuzZTRwhahZlBS7RaSw7cn_Ujc1gz6TgqqcGlVvcOxkCBCff7NJJh0P8m7rCikwOW_RFmLNXB7IgcS7pAPLOOcTwamf_W00c2-F7g_sanqti2hBIXJHqkBKeeYbWWtqgh1Yl3waBg9Dbq1w7T52m3L2asSzGmyKJCLLIdzYO')">
+                  <span class="material-symbols-outlined" style="font-size:1.1rem;">add</span>
+                  <span data-i18n="btn.add_to_cart">ADICIONAR AO CARRINHO</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="zt-card fade-in">
+              <div class="card-image">
+                <img alt="Alegria de Verão — Girassóis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOubVbZH6-tR_MFthnLpZbuHuFIHi8q_bRDKz0uiFk3V7C0gB1YjZ6O0Vj1BYAlaKUOXvH6n4IQuXubv-ZTk2SlaZiKGXziXWA06qEbDcMQc9O3KsuALu8zXKhgCdRfqz_GV-JTx7N360TR-iijYgy8sE6AN3qjvr-ivZVJgPoJyXyFugHY6xLmr6nK4eV7arp3GQcQA6P9haVsjCo9Req8J6Rb6UR_2Yj4aLdOHEt3aWW13cFTKkUV7Tbz5e0mEg6NtKKiScmzxSM">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Alegria de Verão</h3>
+                <p class="text-sm mb-4" style="color:var(--text-muted);">Girassóis vibrantes em vaso artesanal</p>
+                <button class="btn-add-selection" onclick="ZT.addToCart('Alegria de Verão', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOubVbZH6-tR_MFthnLpZbuHuFIHi8q_bRDKz0uiFk3V7C0gB1YjZ6O0Vj1BYAlaKUOXvH6n4IQuXubv-ZTk2SlaZiKGXziXWA06qEbDcMQc9O3KsuALu8zXKhgCdRfqz_GV-JTx7N360TR-iijYgy8sE6AN3qjvr-ivZVJgPoJyXyFugHY6xLmr6nK4eV7arp3GQcQA6P9haVsjCo9Req8J6Rb6UR_2Yj4aLdOHEt3aWW13cFTKkUV7Tbz5e0mEg6NtKKiScmzxSM')">
+                  <span class="material-symbols-outlined" style="font-size:1.1rem;">add</span>
+                  <span data-i18n="btn.add_to_cart">ADICIONAR AO CARRINHO</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="zt-card fade-in">
+              <div class="card-image">
+                <img alt="Orquídea Phalaenopsis Pura" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxu5K23Onn12HXpsLtJfGOnjPeQR5jJVWa-3MG2rgGybZmB9aH5sbBbhOGPmmx4NVydQp5MWq2Oz38gzdxBW8bcCgSrb0MuNaKxziMCLa7FPFq1jI2wU7sLgpzxiCWo4YYJkTu-_cl6Et-zxdp9SpljWmh-C6KKmDGQ0_9aAQP6UMzo83oHgRDkdo3T34R1PImhX4E14qgXT98sSo6QZCZ_CdaPg7ElBCtdO66WFb8ykevwYNfqWR2_591Fgz7XfuJP0BCDOYkys7P">
+                <span class="card-badge">Destaque</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Orquídea Phalaenopsis Pura</h3>
+                <p class="text-sm mb-4" style="color:var(--text-muted);">Orquídea branca de duas hastes em vaso</p>
+                <button class="btn-add-selection" onclick="ZT.addToCart('Orquídea Phalaenopsis Pura', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxu5K23Onn12HXpsLtJfGOnjPeQR5jJVWa-3MG2rgGybZmB9aH5sbBbhOGPmmx4NVydQp5MWq2Oz38gzdxBW8bcCgSrb0MuNaKxziMCLa7FPFq1jI2wU7sLgpzxiCWo4YYJkTu-_cl6Et-zxdp9SpljWmh-C6KKmDGQ0_9aAQP6UMzo83oHgRDkdo3T34R1PImhX4E14qgXT98sSo6QZCZ_CdaPg7ElBCtdO66WFb8ykevwYNfqWR2_591Fgz7XfuJP0BCDOYkys7P')">
+                  <span class="material-symbols-outlined" style="font-size:1.1rem;">add</span>
+                  <span data-i18n="btn.add_to_cart">ADICIONAR AO CARRINHO</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="zt-card fade-in">
+              <div class="card-image">
+                <img alt="Mix de Tulipas Holandesas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvucXMoMCqbi0UP0DGXAriwk1WPxXSCFdZXt2SZnQdyqjbl3Iwu5fEp2FANmd02r96iteYB3YwgTFQ-OIqOpVwQ9khjZUO-rlGJIQsDY81nunyAMpqeyAADe8qSUq7ZO0nt4VFYWW7tNMQ1D4BPJfaIB-FlUb0x4O8BhRJcCT1_fme93EwadqSn9I11bEgxfnZ_Xb5iDX9euC578JCtc0jRwTv1HtVJxePlLBLCoy50nX90QRYT95EqMWKwz8JO9f-G_2sK2M2LnUK">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Mix de Tulipas Holandesas</h3>
+                <p class="text-sm mb-4" style="color:var(--text-muted);">15 Tulipas em cores sortidas da estação</p>
+                <button class="btn-add-selection" onclick="ZT.addToCart('Mix de Tulipas Holandesas', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvucXMoMCqbi0UP0DGXAriwk1WPxXSCFdZXt2SZnQdyqjbl3Iwu5fEp2FANmd02r96iteYB3YwgTFQ-OIqOpVwQ9khjZUO-rlGJIQsDY81nunyAMpqeyAADe8qSUq7ZO0nt4VFYWW7tNMQ1D4BPJfaIB-FlUb0x4O8BhRJcCT1_fme93EwadqSn9I11bEgxfnZ_Xb5iDX9euC578JCtc0jRwTv1HtVJxePlLBLCoy50nX90QRYT95EqMWKwz8JO9f-G_2sK2M2LnUK')">
+                  <span class="material-symbols-outlined" style="font-size:1.1rem;">add</span>
+                  <span data-i18n="btn.add_to_cart">ADICIONAR AO CARRINHO</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="zt-card fade-in">
+              <div class="card-image">
+                <img alt="Lírios Casablanca Pureza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWftEEXE6Xh-oDfphuHqJpAVuVGNewdxPSjnd8KJpcDCzKdSJwN22VqZwKrdDDr2xyrCtSvG18mycK5Z91JMRn-RsY4VOu8qdMUhZg1EtbwqAnZDXt8GRy_z8prWrflPlSLuaqF5WviM7ErFlugAxhjfnX5GQ4_SWMi6kcy8ZImg1siLOE-wXzexkXtZ_EerMYS23jQHGGHX3uDwwl0duNbdqA7nUvfrAfmAeAKlIJ1uIOR9hGD4UKdaFwWIj0xahKakLJ5v1AKgPB">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Lírios Casablanca Pureza</h3>
+                <p class="text-sm mb-4" style="color:var(--text-muted);">Lírios brancos perfumados em embalagem especial</p>
+                <button class="btn-add-selection" onclick="ZT.addToCart('Lírios Casablanca Pureza', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWftEEXE6Xh-oDfphuHqJpAVuVGNewdxPSjnd8KJpcDCzKdSJwN22VqZwKrdDDr2xyrCtSvG18mycK5Z91JMRn-RsY4VOu8qdMUhZg1EtbwqAnZDXt8GRy_z8prWrflPlSLuaqF5WviM7ErFlugAxhjfnX5GQ4_SWMi6kcy8ZImg1siLOE-wXzexkXtZ_EerMYS23jQHGGHX3uDwwl0duNbdqA7nUvfrAfmAeAKlIJ1uIOR9hGD4UKdaFwWIj0xahKakLJ5v1AKgPB')">
+                  <span class="material-symbols-outlined" style="font-size:1.1rem;">add</span>
+                  <span data-i18n="btn.add_to_cart">ADICIONAR AO CARRINHO</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="zt-card fade-in">
+              <div class="card-image">
+                <img alt="Coleção Protea Silvestre" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTB3ETSBHn-SGC-Zq7DXJh7JD8ez4RsblsaySLDiPuGzHAgIOvJtsGUbaA48SL1meG4AugMLba6E7xMfNkMh1lhghqijZZEawFFo58OOluIQ6MIRK4BbFewlTpZLiE0awi7Gqi-_PEYLSj8Ww8atdEl0u1bgYxPwIRCE2iS_7EUIf5iUq7Jp-3HEAWskioySxcOSruxZUxMT5_F0Vp5ruaWTJsMsuu5ewWLYTxJTUBwfuOGS7kUzxu3fw2R9j61iBXZUkeVNVqA9oJ">
+                <span class="card-badge" style="background:var(--plum);">Exótico</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Coleção Protea Silvestre</h3>
+                <p class="text-sm mb-4" style="color:var(--text-muted);">Flores exóticas e raras com design contemporâneo</p>
+                <button class="btn-add-selection" onclick="ZT.addToCart('Coleção Protea Silvestre', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBTB3ETSBHn-SGC-Zq7DXJh7JD8ez4RsblsaySLDiPuGzHAgIOvJtsGUbaA48SL1meG4AugMLba6E7xMfNkMh1lhghqijZZEawFFo58OOluIQ6MIRK4BbFewlTpZLiE0awi7Gqi-_PEYLSj8Ww8atdEl0u1bgYxPwIRCE2iS_7EUIf5iUq7Jp-3HEAWskioySxcOSruxZUxMT5_F0Vp5ruaWTJsMsuu5ewWLYTxJTUBwfuOGS7kUzxu3fw2R9j61iBXZUkeVNVqA9oJ')">
+                  <span class="material-symbols-outlined" style="font-size:1.1rem;">add</span>
+                  <span data-i18n="btn.add_to_cart">ADICIONAR AO CARRINHO</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="mt-16 flex items-center justify-center gap-2">
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center transition-all" style="border:1px solid var(--border);color:var(--text-muted);">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="w-10 h-10 rounded-lg font-bold flex items-center justify-center text-white" style="background:var(--brand);">1</button>
+            <button class="w-10 h-10 rounded-lg font-bold flex items-center justify-center" style="border:1px solid var(--border);color:var(--text);">2</button>
+            <button class="w-10 h-10 rounded-lg font-bold flex items-center justify-center" style="border:1px solid var(--border);color:var(--text);">3</button>
+            <span class="px-2" style="color:var(--text-light);">...</span>
+            <button class="w-10 h-10 rounded-lg font-bold flex items-center justify-center" style="border:1px solid var(--border);color:var(--text);">12</button>
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center transition-all" style="border:1px solid var(--border);color:var(--text-muted);">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+
+          <!-- Inline CTA -->
+          <div class="mt-16 rounded-[20px] p-8 md:p-12 text-center fade-in" style="background:var(--brand-light);border:1px solid rgba(255,105,0,0.12);">
+            <h3 class="text-2xl font-black mb-3" style="color:var(--plum);" data-i18n="catalog.cta.title">Não encontrou o que procura?</h3>
+            <p class="mb-6" style="color:var(--text-muted);" data-i18n="catalog.cta.desc">Montamos arranjos personalizados sob medida. Conte-nos sua ideia!</p>
+            <a href="https://wa.me/5519996638193?text=Ol%C3%A1!%20Gostaria%20de%20um%20arranjo%20personalizado." 
+               target="_blank" class="btn-primary">
+              <span class="material-symbols-outlined">chat</span>
+              <span data-i18n="catalog.cta.btn">Solicitar Arranjo Personalizado</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="i18n.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>
